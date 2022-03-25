@@ -1,12 +1,11 @@
 package prefixmatcher
 
-class PrefixTreeBuilder(prefixes: Seq[String]) {
-  def build(): PrefixTree = {
-    val tree = new PrefixTree()
-    prefixes.foreach { word =>
-      tree.insert(word)
-    }
+import prefixtree.{PrefixTree, DefaultPrefixTree}
 
+class PrefixTreeBuilder(prefixes: Seq[String]) {
+  def build(): PrefixTree[String] = {
+    val tree = new DefaultPrefixTree[String]()
+    prefixes.foreach(word => tree.insert(word, word))
     tree
   }
 }

@@ -4,5 +4,6 @@ ThisBuild / scalaVersion := "2.13.8"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "PrefixMatcher"
+    name := "PrefixMatcher",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
   )
